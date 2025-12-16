@@ -1,16 +1,14 @@
-import { defineConfig, globalIgnores } from "eslint/config";
+import globals from "globals";
+import pluginJs from "@eslint/js";
+import pluginReact from "eslint-plugin-react";
+import pluginReactHooks from "eslint-plugin-react-hooks";
 import nextVitals from "eslint-config-next/core-web-vitals";
 
-const eslintConfig = defineConfig([
+export default [
+  {files: ["**/*.{js,mjs,cjs,jsx}"]},
+  {languageOptions: { globals: globals.browser }},
+  pluginJs.configs.recommended,
+  pluginReact.configs.recommended,
+  pluginReactHooks.configs.recommended,
   ...nextVitals,
-  // Override default ignores of eslint-config-next.
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-  ]),
-]);
-
-export default eslintConfig;
+];

@@ -1,4 +1,4 @@
-'use client';
+  'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -18,7 +18,7 @@ export default function Footer() {
     Company: [
       { label: 'About', href: '/about' },
       { label: 'Blog', href: '/blog' },
-      { label: 'Contact', href: '/contact' },
+      { label: 'Contact', href: '/contactus' },
     ],
     Legal: [
       { label: 'Privacy', href: '/privacy' },
@@ -31,30 +31,57 @@ export default function Footer() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="bg-black text-white"
+      className="bg-black text-white py-16"
     >
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
-          {/* Brand */}
-          <div>
-            <h3 className="text-2xl font-bold mb-4">Pantech</h3>
-            <p className="text-gray-400 text-sm">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Main Footer Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 mb-12">
+          {/* Brand Section */}
+          <div className="md:col-span-2">
+            <h3 className="text-2xl font-bold mb-3 text-white">Pantech</h3>
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Bridging custom engineering with innovative marketing solutions.
             </p>
+            {/* Social Links */}
+            <div className="flex gap-4">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                aria-label="Twitter"
+              >
+                Twitter
+              </a>
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                aria-label="LinkedIn"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                aria-label="GitHub"
+              >
+                GitHub
+              </a>
+            </div>
           </div>
 
-          {/* Links */}
+          {/* Links Sections */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h4 className="font-semibold mb-4">{category}</h4>
-              <ul className="space-y-2">
+              <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-white">
+                {category}
+              </h4>
+              <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href}>
-                      <span className="text-gray-400 hover:text-white transition-colors text-sm">
-                        {link.label}
-                      </span>
+                    <Link
+                      href={link.href}
+                      className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                    >
+                      {link.label}
                     </Link>
                   </li>
                 ))}
@@ -63,24 +90,11 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Section */}
         <div className="border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
-              © 2025 Pantech Software. All rights reserved.
-            </p>
-            <div className="flex gap-6">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                Twitter
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                LinkedIn
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                GitHub
-              </a>
-            </div>
-          </div>
+          <p className="text-gray-400 text-sm text-center">
+            © 2025 Pantech Software. All rights reserved.
+          </p>
         </div>
       </div>
     </motion.footer>
