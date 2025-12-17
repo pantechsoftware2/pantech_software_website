@@ -1,8 +1,15 @@
-  'use client';
+'use client';
 
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import {
+  Facebook,
+  Instagram,
+  Youtube,
+  Linkedin,
+  Twitter,
+} from 'lucide-react';
 
 export default function Footer() {
   const footerLinks = {
@@ -26,45 +33,66 @@ export default function Footer() {
     ],
   };
 
+  const socialLinks = [
+    { Icon: Facebook, label: 'Facebook', href: 'https://facebook.com/' },
+    { Icon: Instagram, label: 'Instagram', href: 'https://instagram.com/' },
+    { Icon: Twitter, label: 'Twitter', href: 'https://twitter.com/' },
+    { Icon: Youtube, label: 'YouTube', href: 'https://youtube.com/' },
+    { Icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/' },
+  ];
+
   return (
     <motion.footer
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="bg-black text-white py-16"
+      className="bg-[#0d1224] text-white pt-16 pb-12"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 mb-12">
+        <div className="
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          gap-10
+          mb-20
+          lg:flex
+          lg:justify-between
+        ">
+
           {/* Brand Section */}
-          <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold mb-3 text-white">Pantech</h3>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+          <div className="sm:col-span-2 lg:max-w-sm">
+            <h3 className="text-2xl font-bold mb-3 text-white hover:text-gray-300 transition-colors duration-300 cursor-pointer">
+              Pantech
+            </h3>
+
+            <p className="text-white text-sm leading-relaxed mb-6">
               Bridging custom engineering with innovative marketing solutions.
             </p>
-            {/* Social Links */}
-            <div className="flex gap-4">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
-                aria-label="Twitter"
-              >
-                Twitter
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
-                aria-label="LinkedIn"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
-                aria-label="GitHub"
-              >
-                GitHub
-              </a>
+
+            {/* Social Icons */}
+            <div className="flex gap-3">
+              {socialLinks.map(({ Icon, label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="
+                    text-cyan-400
+                    transition-all
+                    duration-300
+                    ease-out
+                    hover:text-white
+                    hover:scale-105
+                    hover:drop-shadow-[0_0_4px_rgba(255,255,255,0.45)]
+                  "
+                >
+                  <Icon size={22} />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -79,7 +107,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                      className="text-white hover:text-gray-300 transition-colors duration-300 text-sm"
                     >
                       {link.label}
                     </Link>
@@ -91,7 +119,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-800 pt-8">
+        <div className="border-t border-gray-800 pt-4 mt-6">
           <p className="text-gray-400 text-sm text-center">
             © 2025 Pantech Software. All rights reserved.
           </p>
