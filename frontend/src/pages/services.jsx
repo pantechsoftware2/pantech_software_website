@@ -63,7 +63,7 @@ export default function ServicesPage() {
   return (
     <>
       <Header />
-      <main className="min-h-[calc(100vh-80px)] pt-0 bg-slate-950 antialiased">
+      <main className="min-h-[calc(100vh-80px)] pt-0 bg-slate-750 antialiased">
         {/* ✅ WHITE HERO - Clean white background */}
         <section
           aria-labelledby="services-hero-heading"
@@ -120,21 +120,21 @@ export default function ServicesPage() {
         {/* ✅ DARK SERVICES SECTION - High contrast */}
         <section
           aria-labelledby="services-grid-heading"
-          className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-28 bg-slate-950"
+          className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-28 bg-slate-750"
         >
-          <div className="absolute inset-x-0 top-0 -mt-px h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+          <div className="absolute inset-x-0 top-0 -mt-px h-px bg-white" />
 
           <div className="relative z-10">
             <div className="text-center mb-16 lg:mb-20">
               {/* ✅ Section heading - Pure white */}
               <h2
                 id="services-grid-heading"
-                className="text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4"
+                className="text-3xl lg:text-4xl font-bold text-[#0d1224] tracking-tight mb-4"
               >
                 Consulting services
               </h2>
               {/* ✅ Section intro - Light gray */}
-              <p className="text-lg text-slate-300 max-w-xl mx-auto leading-relaxed">
+              <p className="text-lg text-cyan-700 max-w-xl mx-auto leading-relaxed">
                 From greenfield platforms to legacy modernization. We partner with product teams to ship 
                 software that drives revenue.
               </p>
@@ -157,10 +157,10 @@ export default function ServicesPage() {
                     scale: 1.02,
                     transition: { duration: 0.3, ease: 'easeOut' },
                   }}
-                  className="group relative h-full overflow-hidden rounded-3xl border border-white/15 bg-white/8 backdrop-blur-2xl p-7 lg:p-9 shadow-[0_25px_80px_-15px_rgba(0,0,0,0.7)] hover:shadow-[0_35px_100px_-20px_rgba(236,72,153,0.4)] hover:border-white/30 transition-all duration-500"
+                  className="group relative h-full overflow-hidden rounded-3xl border border-white/15 bg-[#0a2540] backdrop-blur-2xl p-7 lg:p-9 shadow-[0_25px_80px_-15px_rgba(0,0,0,0.7)] hover:shadow-[0_35px_100px_-20px_rgba(236,72,153,0.4)] hover:border-white/30 transition-all duration-500"
                 >
                   {/* Vibrant gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-pink-500/15 via-purple-500/15 to-indigo-500/15 opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 opacity-0 group-hover:opacity-100 transition-all duration-500" />
 
                   <div className="relative h-full flex flex-col">
                     {/* Icon + Badge - Bright accents */}

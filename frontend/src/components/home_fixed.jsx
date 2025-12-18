@@ -50,7 +50,7 @@ function HeroSectionContent() {
         animate="visible"
         className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full"
       >
-        <motion.div variants={itemVariants} className="inline-block mb-6 px-4 py-2 bg-black/5 border border-black/10 rounded-full backdrop-blur-sm">
+        <motion.div variants={itemVariants} className="inline-block mb-6 px-4 py-2 bg-black/5 border border-black/20 rounded-full backdrop-blur-sm">
           <span className="text-sm font-medium text-gray-700">Engineering Your Growth</span>
         </motion.div>
 
@@ -58,7 +58,7 @@ function HeroSectionContent() {
           variants={itemVariants}
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight mb-8"
         >
-          <span className="bg-gradient-to-r from-cyan-500 via-pink-600 to-yellow-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
             <TypewriterText text="Custom Software Meets " delay={60} startDelay={200} showCursor={false} />
           </span>
           <span className="block bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
