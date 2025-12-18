@@ -31,7 +31,7 @@ export default function Header() {
       transition={{ duration: 0.35, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
         ${scrolled
-          ? 'bg-white/80 backdrop-blur-xl shadow-sm'
+          ? 'bg-white shadow-sm'
           : 'bg-transparent'
         }`}
     >
@@ -68,7 +68,7 @@ export default function Header() {
         {/* RIGHT */}
         <div className="flex items-center gap-3">
           <Link href="/contact" className="hidden md:block">
-            <button className="text-sm bg-black text-white px-5 py-2 rounded-md hover:bg-gray-800 transition">
+            <button className="text-sm bg-[#0048e5] text-white px-5 py-2 rounded-md hover:bg-indigo-800 transition">
               Get Started
             </button>
           </Link>
@@ -99,14 +99,14 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="block text-gray-800 font-medium hover:text-black"
+                  className="block text-white font-medium hover:text-black"
                 >
                   {item.label}
                 </Link>
               ))}
 
               <Link href="/contact" onClick={() => setOpen(false)}>
-                <button className="w-full bg-black text-white py-2 rounded-md">
+                <button className="w-full bg-[#0048e5] text-white py-2 rounded-md">
                   Get Started
                 </button>
               </Link>

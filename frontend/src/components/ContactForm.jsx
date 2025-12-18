@@ -1,10 +1,17 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Button from './shared/Button';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ContactForm() {
+  const formRef = useRef(null);
+  const fieldsRef = useRef([]);
+
   const [formData, setFormData] = useState({
     name: '',
     mobile: '',
@@ -13,16 +20,53 @@ export default function ContactForm() {
     service: '',
     message: '',
   });
+
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  /* ---------------- GSAP (NO COLOR, CLEAN) ---------------- */
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        formRef.current,
+        { opacity: 0, y: 48 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.9,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: formRef.current,
+            start: 'top 80%',
+          },
+        }
+      );
+
+      gsap.fromTo(
+        fieldsRef.current,
+        { opacity: 0, y: 18 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: 'power2.out',
+          stagger: 0.08,
+          scrollTrigger: {
+            trigger: formRef.current,
+            start: 'top 75%',
+          },
+        }
+      );
+    });
+
+    return () => ctx.revert();
+  }, []);
+
+  /* ---------------- HANDLERS ---------------- */
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
@@ -32,14 +76,15 @@ export default function ContactForm() {
     setSubmitted(false);
 
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbz26DsdveOIN-GqInGvbvJuBiNgH_czPCXa-r3w770f_t3mZqLPGOa4WlqSqbuQ2hik/exec', {
-        method: 'POST',
-        body: JSON.stringify(formData),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        mode: 'no-cors', // Required for Google Apps Script web apps
-      });
+      await fetch(
+        'https://script.google.com/macros/s/AKfycbz26DsdveOIN-GqInGvbvJuBiNgH_czPCXa-r3w770f_t3mZqLPGOa4WlqSqbuQ2hik/exec',
+        {
+          method: 'POST',
+          body: JSON.stringify(formData),
+          headers: { 'Content-Type': 'application/json' },
+          mode: 'no-cors',
+        }
+      );
 
       setSubmitted(true);
       setFormData({
@@ -50,155 +95,99 @@ export default function ContactForm() {
         service: '',
         message: '',
       });
-    } catch (err) {
+    } catch {
       setError('Something went wrong. Please try again later.');
     } finally {
       setLoading(false);
-      // Auto-hide success message after 5 seconds
       setTimeout(() => setSubmitted(false), 5000);
     }
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
-  const fieldVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: { delay: i * 0.1, duration: 0.5 },
-    }),
-  };
-
+  /* ---------------- UI ---------------- */
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      className="max-w-2xl mx-auto"
-    >
+    <div ref={formRef} className="max-w-2xl mx-auto">
       <form
         onSubmit={handleSubmit}
         className="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 shadow-sm space-y-6"
       >
-        <motion.div custom={0} variants={fieldVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            placeholder="John Doe"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition"
-          />
-        </motion.div>
+        {[
+          { label: 'Name', name: 'name', type: 'text', placeholder: 'John Doe' },
+          { label: 'Mobile', name: 'mobile', type: 'tel', placeholder: '0000000000' },
+          { label: 'Email Address', name: 'email', type: 'email', placeholder: 'you@example.com' },
+          { label: 'Address', name: 'address', type: 'text', placeholder: '123 Main St' },
+          { label: 'Service', name: 'service', type: 'text', placeholder: 'Web Development' },
+        ].map((field, i) => (
+          <div
+            key={field.name}
+            ref={(el) => (fieldsRef.current[i] = el)}
+          >
+            <label className="block text-sm font-medium text-gray-900 mb-2">
+              {field.label}
+            </label>
+            <input
+              type={field.type}
+              name={field.name}
+              value={formData[field.name]}
+              onChange={handleChange}
+              required
+              placeholder={field.placeholder}
+              className="
+                w-full px-4 py-3
+                border border-gray-300 rounded-lg text-sm
+                focus:outline-none focus:ring-0
+                transition-all duration-200
+                hover:shadow-sm
+                focus:shadow-md focus:scale-[1.01]
+              "
+            />
+          </div>
+        ))}
 
-        <motion.div custom={1} variants={fieldVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <label htmlFor="mobile" className="block text-sm font-medium text-gray-900 mb-2">
-            Mobile
-          </label>
-          <input
-            type="tel"
-            id="mobile"
-            name="mobile"
-            value={formData.mobile}
-            onChange={handleChange}
-            required
-            placeholder="000000000000000000"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition"
-          />
-        </motion.div>
-
-        <motion.div custom={2} variants={fieldVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
-            Email Address
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            placeholder="you@example.com"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition"
-          />
-        </motion.div>
-
-        <motion.div custom={3} variants={fieldVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <label htmlFor="address" className="block text-sm font-medium text-gray-900 mb-2">
-            Address
-          </label>
-          <input
-            type="text"
-            id="address"
-            name="address"
-            value={formData.address}
-            onChange={handleChange}
-            required
-            placeholder="123 Main St, City, Country"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition"
-          />
-        </motion.div>
-
-        <motion.div custom={4} variants={fieldVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <label htmlFor="service" className="block text-sm font-medium text-gray-900 mb-2">
-            Service
-          </label>
-          <input
-            type="text"
-            id="service"
-            name="service"
-            value={formData.service}
-            onChange={handleChange}
-            required
-            placeholder="e.g. Web Development, SEO, etc."
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition"
-          />
-        </motion.div>
-
-        <motion.div custom={5} variants={fieldVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-900 mb-2">
+        {/* MESSAGE */}
+        <div ref={(el) => (fieldsRef.current[5] = el)}>
+          <label className="block text-sm font-medium text-gray-900 mb-2">
             Your Message
           </label>
           <textarea
-            id="message"
             name="message"
+            rows="5"
+            required
             value={formData.message}
             onChange={handleChange}
-            required
             placeholder="Tell us about your needs..."
-            rows="5"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition resize-none"
+            className="
+              w-full px-4 py-3
+              border border-gray-300 rounded-lg text-sm
+              focus:outline-none focus:ring-0
+              transition-all duration-200
+              hover:shadow-sm
+              focus:shadow-md focus:scale-[1.01]
+              resize-none
+            "
           />
-        </motion.div>
+        </div>
 
-        <motion.div
-          custom={6}
-          variants={fieldVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+        {/* SUBMIT */}
+        <div
+          ref={(el) => (fieldsRef.current[6] = el)}
           className="flex justify-end"
         >
           <Button
             type="submit"
             variant="primary"
             size="md"
-            className="w-full sm:w-auto"
             disabled={loading}
+            className="
+              w-full sm:w-auto
+              transition-transform duration-200
+              bg-indigo-700
+              hover:scale-[1.03]
+              active:scale-[0.97]
+            "
           >
             {loading ? 'Sending...' : submitted ? '✓ Message Sent!' : 'Send Message'}
           </Button>
-        </motion.div>
+        </div>
 
         {error && (
           <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-sm text-red-700">
@@ -208,7 +197,7 @@ export default function ContactForm() {
 
         {submitted && !loading && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -6 }}
             animate={{ opacity: 1, y: 0 }}
             className="p-4 bg-green-50 border border-green-200 rounded-lg text-sm text-green-700"
           >
@@ -216,6 +205,6 @@ export default function ContactForm() {
           </motion.div>
         )}
       </form>
-    </motion.div>
+    </div>
   );
 }

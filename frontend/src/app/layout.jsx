@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import metaLogo from './metalogo.jpeg';
+import metaLogo from './metalogo.png';
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 
