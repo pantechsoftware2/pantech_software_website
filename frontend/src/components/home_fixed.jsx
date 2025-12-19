@@ -70,23 +70,27 @@ function HeroSectionContent() {
           We bridge the gap between enterprise-grade software engineering and modern marketing technology. Fast, reliable, conversion-focused.
         </motion.p>
 
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
-        >
-          <button
-            className="w-full sm:w-auto px-8 py-4 rounded-full bg-transparent border-2 border-gray-900 text-sm font-semibold uppercase tracking-wider text-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300 hover:shadow-xl"
-          >
-            Start a Project
-          </button>
+     <motion.div
+  variants={itemVariants}
+  className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+>
+  {/* Start a Project → Contact Us */}
+  <a
+    href="/contactus"
+    className="w-full sm:w-auto px-8 py-4 rounded-full bg-transparent border-2 border-gray-900 text-sm font-semibold uppercase tracking-wider text-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300 hover:shadow-xl text-center"
+  >
+    Start a Project
+  </a>
 
-          <a
-            href="/book-demo"
-            className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-sm font-semibold uppercase tracking-wider text-white hover:shadow-2xl hover:scale-105 transition-all duration-300"
-          >
-            Explore Our Work
-          </a>
-        </motion.div>
+  {/* Explore Our Work */}
+  <a
+    href="/aboutus"
+    className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-sm font-semibold uppercase tracking-wider text-white hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center"
+  >
+    Explore Our Work
+  </a>
+</motion.div>
+
 
         <motion.div variants={itemVariants} className="max-w-2xl mx-auto mb-12">
           <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 shadow-2xl backdrop-blur-sm">
