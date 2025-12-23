@@ -71,7 +71,7 @@ export default function BlogPage() {
               transition={{ duration: 0.6 }}
               className="max-w-3xl mx-auto text-center"
             >
-              <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-cyan-400 to-gray-400 bg-clip-text text-transparent mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-cyan-400 to-gray-400 bg-clip-text text-transparent mb-6 leading-tight pb-2">
                 Engineering<br className="sm:hidden" />
                 <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-500 bg-clip-text text-transparent">Insights</span>
               </h1>
@@ -141,9 +141,9 @@ export default function BlogPage() {
                       <span className="text-xs text-gray-400 font-mono">
                         {article.readTime} min read
                       </span>
-                      <span className="text-sm font-medium text-purple-400 group-hover:text-purple-300 transition-all duration-300 flex items-center gap-1 group-hover:translate-x-1">
+                      {/* <span className="text-sm font-medium text-purple-400 group-hover:text-purple-300 transition-all duration-300 flex items-center gap-1 group-hover:translate-x-1">
                         Read <span>→</span>
-                      </span>
+                      </span> */}
                     </div>
                   </div>
                 </Link>

@@ -79,9 +79,9 @@ export default function Privacy() {
                   If you have questions or comments about this Privacy Policy, please contact us at:
                 </p>
                 <p className="font-semibold">
-                  Pantech Software<br />
+                  PanTech Software<br />
                   Email: pantechsoftware2@gmail.com<br />
-                  Phone: +91 9831216414
+                  Phone: +91 9831216414<br></br>
                   Adress: 16, Strand Road, Diamond Heritage, 1st Floor, Suite No. 201E, Kolkata 700001
                 </p>
               </section>

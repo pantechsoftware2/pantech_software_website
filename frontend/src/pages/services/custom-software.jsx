@@ -45,7 +45,7 @@ export default function CustomSoftwarePage() {
         className="bg-white min-h-screen"
       >
         {/* Hero Section */}
-        <section className="relative pt-40 pb-20 px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <section className="relative pt-30 pb-20 px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-indigo-100">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -58,7 +58,37 @@ export default function CustomSoftwarePage() {
               <p className="text-xl text-gray-600 max-w-2xl mb-8">
                 Build powerful, scalable applications tailored specifically to your business requirements and growth ambitions.
               </p>
-              <Button variant="primary">Start Your Project</Button>
+                   <a
+          href="/contactus"
+          className="
+            group inline-flex items-center gap-3
+            bg-[#0048e5] text-white
+            px-5 py-3
+            rounded-full
+            font-semibold text-lg
+            transition-all duration-300
+            hover:shadow-xl hover:scale-110
+          "
+        >
+          Start Your Project
+
+          <svg
+            className="w-3 h-3 overflow-visible"
+            viewBox="0 0 10 10"
+            aria-hidden="true"
+          >
+            <g
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              fillRule="evenodd"
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            >
+              <path d="M0 5h7" />
+              <path d="M1 1l4 4-4 4" />
+            </g>
+          </svg>
+        </a>
             </motion.div>
           </div>
         </section>
@@ -88,9 +118,9 @@ export default function CustomSoftwarePage() {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-20 px-6 lg:px-8 bg-gradient-to-br from-indigo-50 to-blue-50">
+        <section className="py-20 px-6 lg:px-8 bg-[#0d1224]">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold mb-12 text-gray-900">
+            <h2 className="text-4xl font-bold mb-12 text-white">
               What You Get
             </h2>
             <div className="grid md:grid-cols-2 gap-6">

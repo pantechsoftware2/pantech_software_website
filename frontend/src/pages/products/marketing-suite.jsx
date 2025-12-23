@@ -16,7 +16,9 @@ export default function MarketingSuite() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">Pantech Marketing Suite</h1>
+    <h1 className="text-4xl sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-[#00b0ff] to-[#ff3d00] font-bold mb-4 leading-none pb-2">
+  PanTech Marketing Suite
+</h1>
             <p className="text-xl text-gray-600 mb-8">
               Comprehensive marketing automation and campaign management platform built for modern marketers.
             </p>

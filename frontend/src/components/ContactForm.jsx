@@ -112,7 +112,16 @@ export default function ContactForm() {
       >
         {[
           { label: 'Name', name: 'name', type: 'text', placeholder: 'John Doe' },
-          { label: 'Mobile', name: 'mobile', type: 'tel', placeholder: '0000000000' },
+    { 
+      label: 'Mobile', 
+      name: 'mobile', 
+      type: 'tel', 
+      placeholder: '+1234567890 (include country code)',
+      maxlength: '16',
+      pattern: '\\+?[0-9]{0,15}',
+      title: 'Enter in international format, e.g., +1234567890',
+      inputMode: 'tel'
+    },
           { label: 'Email Address', name: 'email', type: 'email', placeholder: 'you@example.com' },
           { label: 'Address', name: 'address', type: 'text', placeholder: '123 Main St' },
           { label: 'Service', name: 'service', type: 'text', placeholder: 'Web Development' },

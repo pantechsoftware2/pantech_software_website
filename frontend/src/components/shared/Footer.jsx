@@ -17,13 +17,16 @@ export default function Footer() {
       { label: 'Custom Software', href: '/services/custom-software' },
       { label: 'Mobile Apps', href: '/services/mobile-apps' },
       { label: 'DevOps & Cloud', href: '/services/devops' },
+       { label: 'Web Application Development', href: '/services/web-application' },
+      { label: 'Enterprise System Integration', href: '/services/enterprise-system' },
+      { label: 'AI Powered Solutions', href: '/services/ai-solutions' },
     ],
     Products: [
       { label: 'Marketing Suite', href: '/products/marketing-suite' },
       { label: 'Analytics', href: '/products/analytics' },
     ],
     Company: [
-      { label: 'About', href: '/about' },
+      { label: 'About', href: '/aboutus' },
       { label: 'Blog', href: '/blog' },
       { label: 'Contact', href: '/contactus' },
     ],
@@ -70,7 +73,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:max-w-sm">
             <h3 className="text-2xl font-bold mb-3">
-              Pantech
+              PanTech Software
             </h3>
 
             <p className="text-sm leading-relaxed mb-6 text-gray-200">

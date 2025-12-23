@@ -45,7 +45,7 @@ export default function ProductsPage() {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-[#0d1224]"
           >
-            Pantech Labs
+            PanTech Labs
           </motion.h1>
 
           <motion.p
@@ -142,7 +142,7 @@ await trackEvent({
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              href="/contact"
+              href="/contactus"
               className="inline-flex mt-8 items-center justify-center rounded-full bg-[#0048e5] px-8 py-3 text-sm font-medium text-white shadow-lg"
             >
               Request Access

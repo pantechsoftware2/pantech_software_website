@@ -4,6 +4,9 @@ import {
   CodeBracketIcon,
   PhoneIcon,
   CloudIcon,
+  GlobeAltIcon,
+  BuildingLibraryIcon,
+  SparklesIcon,
 } from '@heroicons/react/24/outline';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
@@ -56,6 +59,55 @@ PushNotification.localNotification({
     value = "enabled"
   }
 }`,
+  },
+  {
+    icon: GlobeAltIcon,
+    title: 'Web Application Development',
+    badge: 'Digital Experience',
+    description:
+      'Modern, responsive web applications built with cutting-edge frameworks. Optimized for performance, SEO, and conversion with real-time user engagement features.',
+    codeLabel: 'Next.js server component pattern',
+    codeSnippet: `// Server component with real-time updates
+export default async function Dashboard() {
+  const data = await fetchUserAnalytics();
+  return (
+    <div className="grid gap-4">
+      <AnalyticsCard data={data} />
+      <PerformanceChart metrics={data.metrics} />
+    </div>
+  );
+}`,
+  },
+  {
+    icon: BuildingLibraryIcon,
+    title: 'Enterprise System Integration',
+    badge: 'Legacy Modernization',
+    description:
+      'Seamlessly integrate legacy systems with modern platforms. API gateways, data synchronization, and unified workflows that reduce complexity and operational overhead.',
+    codeLabel: 'Enterprise API gateway routing',
+    codeSnippet: `// Unified API gateway with service mesh
+router.post('/api/data', async (req, res) => {
+  const legacy = await legacyService.query(req.body);
+  const modern = await modernDB.transform(legacy);
+  cache.set(req.id, modern, '1h');
+  res.json(modern);
+});`,
+  },
+  {
+    icon: SparklesIcon,
+    title: 'AI Powered Solutions',
+    badge: 'Intelligent Automation',
+    description:
+      'Machine learning models and AI systems that solve real business problems. From predictive analytics to intelligent automation, we deliver measurable ROI through data-driven innovation.',
+    codeLabel: 'ML model training pipeline',
+    codeSnippet: `// TensorFlow model pipeline
+const model = tf.sequential({
+  layers: [
+    tf.layers.dense({units: 128, activation: 'relu'}),
+    tf.layers.dropout({rate: 0.2}),
+    tf.layers.dense({units: 1, activation: 'sigmoid'})
+  ]
+});`,
   },
 ];
 

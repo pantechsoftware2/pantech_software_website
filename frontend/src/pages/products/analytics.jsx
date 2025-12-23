@@ -24,8 +24,8 @@ export default function Analytics() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-              Pantech Analytics
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-[#0277bd] to-[#ef6c00]">
+              PanTech Analytics
             </h1>
 
             <p className="text-xl text-gray-600 mb-8">

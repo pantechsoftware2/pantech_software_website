@@ -11,7 +11,7 @@ export default function Header() {
 
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY > 10);
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
@@ -26,38 +26,37 @@ export default function Header() {
 
   return (
     <motion.header
-      initial={{ opacity: 0, y: -10 }}
+      initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.35, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
-        ${scrolled
-          ? 'bg-white shadow-sm'
+      transition={{ duration: 0.4, ease: 'easeOut' }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-white/95 backdrop-blur-sm shadow-sm'
           : 'bg-transparent'
-        }`}
+      }`}
     >
-      <nav className="max-w-7xl mx-auto px-8 h-16 flex items-center justify-between">
-
+      <nav className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between">
         {/* LOGO */}
-        <Link href="/" className="flex items-center leading-none">
-          <motion.div whileHover={{ scale: 1.01 }} className="flex items-center">
+        <Link href="/" className="flex items-center">
+          <motion.div whileHover={{ scale: 1.02 }} className="flex items-center">
             <Image
               src="/pantech_log.png"
               alt="PanTech Software"
               width={160}
               height={40}
               priority
-              className="object-contain"
+              className="object-contain w-32 sm:w-40 md:w-44"
             />
           </motion.div>
         </Link>
 
         {/* DESKTOP MENU */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-8 lg:gap-10">
           {navItems.map((item) => (
             <Link key={item.href} href={item.href}>
               <motion.span
-                whileHover={{ y: -1 }}
-                className="text-sm font-medium text-gray-800 hover:text-black transition"
+                whileHover={{ y: -2 }}
+                className="text-sm lg:text-base font-medium text-gray-700 hover:text-black transition-colors"
               >
                 {item.label}
               </motion.span>
@@ -65,20 +64,27 @@ export default function Header() {
           ))}
         </div>
 
-        {/* RIGHT */}
-        <div className="flex items-center gap-3">
+        {/* RIGHT SIDE */}
+        <div className="flex items-center gap-4">
           <Link href="/contactus" className="hidden md:block">
-            <button className="text-sm bg-[#0048e5] text-white px-5 py-2 rounded-md hover:bg-indigo-800 transition">
+            <motion.button
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              className="text-sm lg:text-base bg-[#0048e5] text-white px-5 py-2.5 rounded-lg hover:bg-[#003acc] transition-colors font-medium"
+            >
               Get Started
-            </button>
+            </motion.button>
           </Link>
 
+          {/* Mobile menu button */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden p-2 rounded-md hover:bg-black/5 transition text-xl"
-            aria-label="Open Menu"
+            className="md:hidden p-2 -mr-2 text-gray-700 hover:text-black focus:outline-none"
+            aria-label="Toggle menu"
           >
-            {open ? '✕' : '☰'}
+            <div className="text-2xl">
+              {open ? '✕' : '☰'}
+            </div>
           </button>
         </div>
       </nav>
@@ -87,26 +93,30 @@ export default function Header() {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden bg-white shadow-lg"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            className="md:hidden bg-white border-t shadow-lg overflow-hidden"
           >
-            <div className="px-6 py-4 space-y-4">
+            <div className="px-5 py-6 flex flex-col gap-5">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="block text-white font-medium hover:text-black"
+                  className="block py-3 px-4 text-lg font-medium text-gray-800 hover:bg-gray-50 rounded-lg transition-colors active:bg-gray-100"
                 >
                   {item.label}
                 </Link>
               ))}
 
-              <Link href="/contact" onClick={() => setOpen(false)}>
-                <button className="w-full bg-[#0048e5] text-white py-2 rounded-md">
+              <Link
+                href="/contactus"
+                onClick={() => setOpen(false)}
+                className="mt-3"
+              >
+                <button className="w-full bg-[#0048e5] text-white py-3.5 rounded-xl font-medium text-lg hover:bg-[#003acc] transition-colors active:bg-[#002b99]">
                   Get Started
                 </button>
               </Link>

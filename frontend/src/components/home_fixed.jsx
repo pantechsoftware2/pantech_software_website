@@ -12,6 +12,9 @@ import TypewriterText from '@/components/home/TypewriterText';
 import ServicesSection from '@/components/home/ServicesSection';
 import PerformanceSection from '@/components/home/PerformanceSection';
 import CTASection from '@/components/home/CTASection';
+import FeaturesPlanet from '@/components/home/planet';  // ✅ Capitalized component name
+
+
 
 function HeroSectionContent() {
   const containerVariants = {
@@ -61,7 +64,7 @@ function HeroSectionContent() {
           <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
             <TypewriterText text="Custom Software Meets " delay={60} startDelay={200} showCursor={false} />
           </span>
-          <span className="block bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+          <span className="block bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent pb-2">
             <TypewriterText text="Marketing Tech" delay={60} startDelay={1800} showCursor={true} />
           </span>
         </motion.h1>
@@ -148,6 +151,7 @@ export default function Home() {
       <HeroSectionContent />
       <ServicesSection />
       <PerformanceSection />
+      {/* <FeaturesPlanet /> */}
       <CTASection />
       {/* <Footer /> */}
     </>
