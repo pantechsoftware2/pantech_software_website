@@ -119,7 +119,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 pt-4 mt-6">
           <p className="text-gray-400 text-sm text-center">
-            © 2025 Pantech Software. All rights reserved.
+            © 2025 PanTech Software. All rights reserved.
           </p>
         </div>
       </div>
