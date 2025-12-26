@@ -25,7 +25,7 @@ export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  /* ---------------- GSAP (NO COLOR, CLEAN) ---------------- */
+  /* ---------------- GSAP ---------------- */
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -66,6 +66,14 @@ export default function ContactForm() {
   /* ---------------- HANDLERS ---------------- */
   const handleChange = (e) => {
     const { name, value } = e.target;
+
+    // ✅ Basic mobile limit: max 15 digits
+    if (name === 'mobile') {
+      const digitsOnly = value.replace(/\D/g, '').slice(0, 15);
+      setFormData((prev) => ({ ...prev, mobile: digitsOnly }));
+      return;
+    }
+
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -110,26 +118,31 @@ export default function ContactForm() {
         onSubmit={handleSubmit}
         className="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 shadow-sm space-y-6"
       >
+
+        {/* ✅ SUCCESS MESSAGE AT TOP */}
+        {submitted && !loading && (
+          <motion.div
+            initial={{ opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="p-4 bg-green-50 border border-green-200 rounded-lg text-sm text-green-700"
+          >
+            Thank you! Your message has been sent successfully.
+          </motion.div>
+        )}
+
         {[
           { label: 'Name', name: 'name', type: 'text', placeholder: 'John Doe' },
-    { 
-      label: 'Mobile', 
-      name: 'mobile', 
-      type: 'tel', 
-      placeholder: '+1234567890 (include country code)',
-      maxlength: '16',
-      pattern: '\\+?[0-9]{0,15}',
-      title: 'Enter in international format, e.g., +1234567890',
-      inputMode: 'tel'
-    },
+          {
+            label: 'Mobile',
+            name: 'mobile',
+            type: 'tel',
+            placeholder: '+123456789',
+          },
           { label: 'Email Address', name: 'email', type: 'email', placeholder: 'you@example.com' },
           { label: 'Address', name: 'address', type: 'text', placeholder: '123 Main St' },
           { label: 'Service', name: 'service', type: 'text', placeholder: 'Web Development' },
         ].map((field, i) => (
-          <div
-            key={field.name}
-            ref={(el) => (fieldsRef.current[i] = el)}
-          >
+          <div key={field.name} ref={(el) => (fieldsRef.current[i] = el)}>
             <label className="block text-sm font-medium text-gray-900 mb-2">
               {field.label}
             </label>
@@ -139,6 +152,8 @@ export default function ContactForm() {
               value={formData[field.name]}
               onChange={handleChange}
               required
+              maxLength={field.name === 'mobile' ? 15 : undefined}
+              inputMode={field.name === 'mobile' ? 'numeric' : undefined}
               placeholder={field.placeholder}
               className="
                 w-full px-4 py-3
@@ -177,10 +192,7 @@ export default function ContactForm() {
         </div>
 
         {/* SUBMIT */}
-        <div
-          ref={(el) => (fieldsRef.current[6] = el)}
-          className="flex justify-end"
-        >
+        <div ref={(el) => (fieldsRef.current[6] = el)} className="flex justify-end">
           <Button
             type="submit"
             variant="primary"
@@ -194,7 +206,7 @@ export default function ContactForm() {
               active:scale-[0.97]
             "
           >
-            {loading ? 'Sending...' : submitted ? '✓ Message Sent!' : 'Send Message'}
+            {loading ? 'Sending...' : 'Send Message'}
           </Button>
         </div>
 
@@ -202,16 +214,6 @@ export default function ContactForm() {
           <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-sm text-red-700">
             {error}
           </div>
-        )}
-
-        {submitted && !loading && (
-          <motion.div
-            initial={{ opacity: 0, y: -6 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="p-4 bg-green-50 border border-green-200 rounded-lg text-sm text-green-700"
-          >
-            Thank you! Your message has been sent successfully.
-          </motion.div>
         )}
       </form>
     </div>
