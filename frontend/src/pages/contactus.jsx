@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import Header from '../components/shared/Header';
 import Footer from '../components/shared/Footer';
 import ContactForm from '../components/ContactForm';
@@ -25,6 +26,10 @@ export default function ContactUsPage() {
 
   return (
     <>
+      <Head>
+        <meta property="og:image" content="/pantech-logo1.png" />
+        <meta name="twitter:image" content="/pantech-logo1.png" />
+      </Head>
       <Header />
 
       <main className="min-h-screen pt-28 pb-16 overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-purple-50">

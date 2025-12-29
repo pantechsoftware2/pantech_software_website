@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Head from 'next/head';
 import { motion } from 'framer-motion';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
@@ -29,6 +30,10 @@ const products = [
 export default function ProductsPage() {
   return (
     <>
+      <Head>
+        <meta property="og:image" content="/pantech-logo1.png" />
+        <meta name="twitter:image" content="/pantech-logo1.png" />
+      </Head>
       <Header />
 
       <main className="relative overflow-hidden">

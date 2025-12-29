@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import { motion } from 'framer-motion';
 import {
   CodeBracketIcon,
@@ -114,6 +115,10 @@ const model = tf.sequential({
 export default function ServicesPage() {
   return (
     <>
+      <Head>
+        <meta property="og:image" content="/pantech-logo1.png" />
+        <meta name="twitter:image" content="/pantech-logo1.png" />
+      </Head>
       <Header />
       <main className="min-h-[calc(100vh-80px)] pt-0 bg-slate-750 antialiased">
         {/* ✅ WHITE HERO - Clean white background */}

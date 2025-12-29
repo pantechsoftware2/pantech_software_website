@@ -15,15 +15,15 @@ export const metadata = {
   keywords:
     "software development, custom engineering, marketing technology, cloud infrastructure",
   icons: {
-    icon: '/pantech-logo.jpeg',
-    shortcut: '/pantech-logo.jpeg',
-    apple: '/pantech-logo.jpeg',
+    icon: '/pantech-logo1.png',
+    shortcut: '/pantech-logo1.png',
+    apple: '/pantech-logo1.png',
   },
   openGraph: {
     title: 'PanTech Software - Custom Engineering & Marketing Solutions',
     description:
       'High-performance, conversion-focused website built with premium Stripe-like aesthetic.',
-    images: ['/pantech-logo.jpeg'],
+    images: ['/pantech-logo1.png'],
   },
 };
 

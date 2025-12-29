@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import Link from 'next/link';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
@@ -54,13 +55,17 @@ export const metadata = {
   title: 'Blog & Resources - PanTech Software | Engineering Your Growth',
   description: 'Technical deep dives, SEO strategies, and software engineering insights from PanTech. Learn how we build high-performance marketing systems.',
   openGraph: {
-    images: ['/pantech-logo.jpeg'],
+    images: ['/pantech-logo1.png'],
   },
 };
 
 export default function BlogPage() {
   return (
     <>
+      <Head>
+        <meta property="og:image" content="/pantech-logo1.png" />
+        <meta name="twitter:image" content="/pantech-logo1.png" />
+      </Head>
       <Header />
       <main className="min-h-screen">
         {/* Hero Section - Fixed gap, #0a2540 bg */}

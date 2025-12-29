@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Head from 'next/head';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
 import { motion } from 'framer-motion';
@@ -8,6 +9,10 @@ import { motion } from 'framer-motion';
 export default function About() {
   return (
     <>
+      <Head>
+        <meta property="og:image" content="/pantech-logo1.png" />
+        <meta name="twitter:image" content="/pantech-logo1.png" />
+      </Head>
       <Header />
       <main className="min-h-screen pt-28 pb-16 bg-gradient-to-b from-gray-50 to-white">
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
