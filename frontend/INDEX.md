@@ -1,4 +1,4 @@
-# 📌 Pantech Software Frontend - Index
+# 📌 PanTech Software Frontend - Index
 
 ## Quick Links
 

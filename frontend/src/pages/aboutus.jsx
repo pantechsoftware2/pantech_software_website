@@ -34,7 +34,7 @@ export default function About() {
             >
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Who We Are</h2>
               <p className="text-lg leading-relaxed">
-                Pantech Software is a leading provider of custom software engineering and cutting-edge marketing technology solutions. We bridge the gap between enterprise-grade software development and innovative marketing tools, delivering high-performance, conversion-focused experiences that drive business growth.
+                PanTech Software is a leading provider of custom software engineering and cutting-edge marketing technology solutions. We bridge the gap between enterprise-grade software development and innovative marketing tools, delivering high-performance, conversion-focused experiences that drive business growth.
               </p>
             </motion.section>
 
@@ -137,7 +137,7 @@ export default function About() {
             >
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Get In Touch</h2>
               <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-                Ready to transform your business with innovative software and marketing solutions? Let's talk about how Pantech Software can help you achieve your goals.
+                Ready to transform your business with innovative software and marketing solutions? Let's talk about how PanTech Software can help you achieve your goals.
               </p>
               <a
                 href="/contactus"

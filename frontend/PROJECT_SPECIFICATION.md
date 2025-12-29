@@ -1,4 +1,4 @@
-# Pantech Software Website
+# PanTech Software Website
 **Date:** December 14, 2025
 
 ## Project Goal
@@ -35,7 +35,7 @@ The "Stripe look" is not just about colors; it is about precision, depth, and mo
 - Mobile App Development
 - Cloud Infrastructure & DevOps
 
-### Products (Pantech Labs)
+### Products (PanTech Labs)
 - Showcase internal marketing tools (even if beta)
 - Give each a dedicated landing page
 

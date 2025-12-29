@@ -22,7 +22,7 @@ export default function Privacy() {
               <section>
                 <h2 className="text-2xl font-bold mb-4 mt-8">Introduction</h2>
                 <p>
-                  At Pantech Software, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.
+                  At PanTech Software, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.
                 </p>
               </section>
 
@@ -62,7 +62,7 @@ export default function Privacy() {
                   <li>Comply with any applicable law, regulation, legal process or governmental request</li>
                   <li>Enforce our Terms & Conditions and other agreements</li>
                   <li>Protect the security or integrity of our website</li>
-                  <li>Protect the rights, privacy, safety, or property of Pantech Software, you, or others</li>
+                  <li>Protect the rights, privacy, safety, or property of PanTech Software, you, or others</li>
                 </ul>
               </section>
 

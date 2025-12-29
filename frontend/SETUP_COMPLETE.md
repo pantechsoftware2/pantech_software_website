@@ -1,10 +1,10 @@
-# Pantech Frontend - Project Setup Complete ✅
+# PanTech Frontend - Project Setup Complete ✅
 
 ## Summary
 
-Your **Pantech Software Frontend** has been successfully created and configured with all modern best practices for a high-performance, conversion-focused website.
+Your **PanTech Software Frontend** has been successfully created and configured with all modern best practices for a high-performance, conversion-focused website.
 
-**Location:** `C:\Users\pante\Downloads\pantechsoftware\frontend`
+**Location:** `C:\Users\pante\Downloads\panTechsoftware\frontend`
 
 ---
 
@@ -74,7 +74,7 @@ frontend/
 
 ### Start Development Server
 ```bash
-cd C:\Users\pante\Downloads\pantechsoftware\frontend
+cd C:\Users\pante\Downloads\panTechsoftware\frontend
 npm run dev
 ```
 

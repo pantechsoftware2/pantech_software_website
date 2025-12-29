@@ -49,7 +49,7 @@ export default function MarketingSuite() {
               </section>
 
               <section>
-                <h2 className="text-3xl font-bold mb-4">Why Choose Pantech Marketing Suite</h2>
+                <h2 className="text-3xl font-bold mb-4">Why Choose PanTech Marketing Suite</h2>
                 <ul className="space-y-2">
                   <li>✓ All-in-one marketing platform</li>
                   <li>✓ Easy to use, powerful features</li>
@@ -73,7 +73,7 @@ export default function MarketingSuite() {
               <section>
                 <h2 className="text-3xl font-bold mb-4">Get Started Today</h2>
                 <p>
-                  Transform your marketing with the Pantech Marketing Suite. Start your free trial or schedule a personalized demo.
+                  Transform your marketing with the PanTech Marketing Suite. Start your free trial or schedule a personalized demo.
                 </p>
                 <a href="/contactus" className="inline-block mt-4 px-8 py-3 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors">
                   Start Free Trial

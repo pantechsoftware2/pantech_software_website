@@ -22,14 +22,14 @@ export default function TermsConditions() {
               <section>
                 <h2 className="text-2xl font-bold mb-4 mt-8">Agreement to Terms</h2>
                 <p>
-                  These Terms & Conditions ("Agreement") constitute a legal agreement between you ("User", "you", or "your") and Pantech Software ("we", "us", "our", or "Company"). By accessing and using this website, you accept and agree to be bound by and comply with these terms and conditions.
+                  These Terms & Conditions ("Agreement") constitute a legal agreement between you ("User", "you", or "your") and PanTech Software ("we", "us", "our", or "Company"). By accessing and using this website, you accept and agree to be bound by and comply with these terms and conditions.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold mb-4 mt-8">Use License</h2>
                 <p>
-                  Permission is granted to temporarily download one copy of the materials (information or software) on Pantech Software's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
+                  Permission is granted to temporarily download one copy of the materials (information or software) on PanTech Software's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
                 </p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>Modifying or copying the materials</li>
@@ -43,35 +43,35 @@ export default function TermsConditions() {
               <section>
                 <h2 className="text-2xl font-bold mb-4 mt-8">Disclaimer</h2>
                 <p>
-                  The materials on Pantech Software's website are on an 'as-is' basis. Pantech Software makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+                  The materials on PanTech Software's website are on an 'as-is' basis. PanTech Software makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold mb-4 mt-8">Limitations</h2>
                 <p>
-                  In no event shall Pantech Software or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Pantech Software's website.
+                  In no event shall PanTech Software or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on PanTech Software's website.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold mb-4 mt-8">Accuracy of Materials</h2>
                 <p>
-                  The materials appearing on Pantech Software's website could include technical, typographical, or photographic errors. Pantech Software does not warrant that any of the materials on its website are accurate, complete, or current. Pantech Software may make changes to the materials contained on its website at any time without notice.
+                  The materials appearing on PanTech Software's website could include technical, typographical, or photographic errors. PanTech Software does not warrant that any of the materials on its website are accurate, complete, or current. PanTech Software may make changes to the materials contained on its website at any time without notice.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold mb-4 mt-8">Links</h2>
                 <p>
-                  Pantech Software has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by Pantech Software of the site. Use of any such linked website is at the user's own risk.
+                  PanTech Software has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by PanTech Software of the site. Use of any such linked website is at the user's own risk.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold mb-4 mt-8">Modifications</h2>
                 <p>
-                  Pantech Software may revise these terms and conditions for its website at any time without notice. By using this website, you are agreeing to be bound by the then current version of these terms and conditions.
+                  PanTech Software may revise these terms and conditions for its website at any time without notice. By using this website, you are agreeing to be bound by the then current version of these terms and conditions.
                 </p>
               </section>
 

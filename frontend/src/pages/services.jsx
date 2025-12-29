@@ -52,8 +52,8 @@ PushNotification.localNotification({
     description:
       'Cloud-native infrastructure on AWS, GCP, or Azure. Kubernetes, GitOps, and fully automated CI/CD so you can ship faster with zero-downtime releases.',
     codeLabel: 'Terraform ECS cluster blueprint',
-    codeSnippet: `resource "aws_ecs_cluster" "pantech" {
-  name = "pantech-prod-cluster"
+    codeSnippet: `resource "aws_ecs_cluster" "PanTech" {
+  name = "PanTech-prod-cluster"
   setting {
     name  = "containerInsights"
     value = "enabled"
@@ -162,7 +162,7 @@ export default function ServicesPage() {
 
               {/* ✅ Hero text - Dark gray on white */}
               <p className="mt-8 text-lg lg:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
-                Pantech builds at the intersection of enterprise engineering and marketing technology. 
+                PanTech builds at the intersection of enterprise engineering and marketing technology. 
                 Reliable platforms. Measurable revenue impact.
               </p>
             </motion.div>
@@ -248,7 +248,7 @@ export default function ServicesPage() {
                           {service.codeLabel}
                         </span>
                         <span className="text-slate-400 bg-white/10 px-2 py-1 rounded-full border border-white/30 backdrop-blur-sm">
-                          pantech.{index + 1}.ts
+                          PanTech.{index + 1}.ts
                         </span>
                       </div>
 

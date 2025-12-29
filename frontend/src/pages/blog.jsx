@@ -51,8 +51,11 @@ const articles = [
 ];
 
 export const metadata = {
-  title: 'Blog & Resources - Pantech Software | Engineering Your Growth',
-  description: 'Technical deep dives, SEO strategies, and software engineering insights from Pantech. Learn how we build high-performance marketing systems.',
+  title: 'Blog & Resources - PanTech Software | Engineering Your Growth',
+  description: 'Technical deep dives, SEO strategies, and software engineering insights from PanTech. Learn how we build high-performance marketing systems.',
+  openGraph: {
+    images: ['/pantech-logo.jpeg'],
+  },
 };
 
 export default function BlogPage() {
@@ -87,7 +90,7 @@ export default function BlogPage() {
                   <div className="w-2 h-2 bg-green-400 rounded-full" />
                 </div>
                 <pre className="text-sm font-mono text-gray-100 leading-relaxed overflow-x-auto">
-                  <code>{`const growth = await pantech.engineer({
+                  <code>{`const growth = await PanTech.engineer({
   performance: "90+ CWV",
   seo: "SGE-ready", 
   architecture: "Stripe-grade"

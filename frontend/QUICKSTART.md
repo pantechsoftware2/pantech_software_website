@@ -1,9 +1,9 @@
-# Quick Start Guide - Pantech Frontend
+# Quick Start Guide - PanTech Frontend
 
 ## 🚀 Start Development Server
 
 ```bash
-cd C:\Users\pante\Downloads\pantechsoftware\frontend
+cd C:\Users\pante\Downloads\panTechsoftware\frontend
 npm run dev
 ```
 
@@ -182,7 +182,7 @@ const variants = {
 Edit `src/app/layout.jsx`:
 ```jsx
 export const metadata = {
-  title: "Pantech - New Title",
+  title: "PanTech - New Title",
   description: "Updated description",
 };
 ```
@@ -195,7 +195,7 @@ export const TESTIMONIALS = [
   {
     author: "Jane Doe",
     company: "TechCorp",
-    text: "Great experience working with Pantech!"
+    text: "Great experience working with PanTech!"
   },
 ];
 ```

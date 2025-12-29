@@ -1,10 +1,10 @@
-# Pantech Software - Frontend
+# PanTech Software - Frontend
 
 A high-performance, conversion-focused website built with Next.js, React, and Tailwind CSS. Features a premium "Stripe-like" aesthetic with smooth animations and optimization for Core Web Vitals.
 
 ## 🎯 Project Overview
 
-Pantech Software Website showcases a software consultancy that bridges custom enterprise engineering with marketing-tech products. Built to industry standards with focus on performance, SEO, and user experience.
+PanTech Software Website showcases a software consultancy that bridges custom enterprise engineering with marketing-tech products. Built to industry standards with focus on performance, SEO, and user experience.
 
 **Key Features:**
 - ✨ Smooth micro-interactions with Framer Motion & GSAP
